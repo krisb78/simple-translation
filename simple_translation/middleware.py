@@ -39,7 +39,7 @@ class MultilingualGenericsMiddleware(LocaleMiddleware):
             
         if not language:
             if not self.has_language_fallback_middlewares():
-                super(MultilingualGenericsMiddleware, self).process_view(request)
+                super(MultilingualGenericsMiddleware, self).process_request(request)
             
         if 'queryset' in view_kwargs:
             filter_expr = None
